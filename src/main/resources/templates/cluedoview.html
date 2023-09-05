@@ -1,10 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="/css/style.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <section>
+            <article th:each="person: ${peopleList}">
+                <div>
+                    <h4 th:text="${person.getSalutation()}"></h4>
+                    <h3 th:text="${person.getName()}"></h3>
+                    <p th:text="${person.getColor()}"></p>
+                </div>
+                <img th:src="${person.getImgPath()}">
+                <details>
+                    <summary>More infos</summary>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Age:</td>
+                                <td th:text="${person.getAge()}"></td>
+                            </tr>
+                            <tr>
+                                <td>Feature:</td>
+                                <td th:text="${person.getFeature()}"></td>
+                            </tr>
+                            <tr>
+                                <td>Clothes:</td>
+                                <td th:text="${person.getClothes()}"></td>
+                            </tr>
+                            <tr>
+                                <td>Height:</td>
+                                <td th:text="${person.getHeight()}"></td>
+                            </tr>
+                            <tr>
+                                <td>Haircolor:</td>
+                                <td th:text="${person.getHaircolor()}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </details>
+            </article>
+        </section>
+        <section>
+
+        </section>
+        <section>
+
+        </section>
+        <!--      <table>
+                  <thead>
+                      <tr>
+                          <th>Salutation</th>
+                          <th>Name</th>
+                          <th>Age</th>
+                          <th>Feature</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr th:each="person: ${peopleList}">
+                          <td th:text="${person.getSalutation()}"/>
+                          <td th:text="${person.getName()}"/>
+                          <td th:text="${person.getAge()}"/>
+                          <td th:text="${person.getFeature()}"/>
+                      </tr>
+                  </tbody>
+              </table> -->
+    </body>
 </html>

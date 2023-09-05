@@ -1,0 +1,29 @@
+body {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-family: "Arial";
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+article {
+    border: 5px solid white;
+    box-shadow: 1rem 1rem 1rem gray;
+    border-radius: 0.5rem;
+    height: 20rem;
+    width: 12rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "div img"
+                            "details details";
+}
+
+img {
+    height: 5rem;
+}
